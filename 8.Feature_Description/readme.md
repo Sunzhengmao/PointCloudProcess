@@ -4,7 +4,7 @@
 实现了FPFH描述子，测试的时候对modelnet中的模型做一个旋转，取旋转前后的两个对应点坐标P_anchor和P_pos，分别提取描述子，再取一个其他的点提取描述子作为P_neg，对这三个点分别提取描述子，计算两两之间的距离。  
 ### 过程： 
 (1)选取chair作为model，如下图所示，黄色为选取的特征点P_anchor和P_pos，蓝色为P_neg.   
-![avatar](/8.Feature_Description/result_image/8-1.jpg)   
+![avatar](../Utils/image/8-1.jpg)
 
 (2)下表记录了这三个特征点处的描述子   
 | | P_anchor | P_pos | P_neg 
@@ -32,9 +32,9 @@ similar_dist | different_dist | different_dist
 因此可以看出，FPFH对旋转是不敏感的。   
 
 (4)将旋转之前的第一个点与旋转之后的每个点计算描述子的距离，得下图
-![avater](result_image/8-2.jpg)
-![avater](result_image/8-3.jpg)
+![avater](../Utils/image/8-2.jpg)
+![avater](../Utils/image/8-3.jpg)
 
 (5)对时间进行测试:
-![avater](result_image/8-4.jpg)
+![avater](../Utils/image/8-4.jpg)
 该程序使用了字典记录每个点的法向量，因此可以快一些，每秒可以计算5.69个描述子。
